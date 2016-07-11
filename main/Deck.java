@@ -2,6 +2,7 @@
  * Deck.java
  */
 
+package holdem;
 import java.util.*;
 
 //Simulates a standard deck of playing cards

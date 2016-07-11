@@ -2,6 +2,7 @@
  * Hand.java
  */
 
+package holdem;
 import java.util.*;
 
 //Simulates a hand of two cards in a game of Texas Hold'em
