@@ -2,6 +2,7 @@
  * Card.java
  */
 
+package holdem;
 import java.util.*;
 
 //Simulates a playing card from a deck
@@ -46,9 +47,6 @@ public class Card {
       case "1":
         number = "A";
         break;
-      case "10":
-        number = "T";
-        break;
       case "11":
         number = "J";
         break;
@@ -74,12 +72,28 @@ public class Card {
         ascii = "\u2764";
         break;
     }
-    return (this.suit == Suits.HEARTS) ? ("|" + ascii + "    |\n" +
-                                    "|  " + number + "  |\n" +
-                                    "|   " + ascii + " |\n") :
-                                   ("|" + ascii + "    |\n" +
-                                    "|  " + number + "  |\n" +
-                                    "|    " + ascii + "|\n");
+
+    //Choose which card to send back
+    if (this.suit == Suits.HEARTS) {
+      if (this.value == 10) {
+         return ("|" + ascii + "    |\n" +
+              "| " + number + "  |\n" +
+              "|   " + ascii + " |\n");
+      }
+      return ("|" + ascii + "    |\n" +
+              "|  " + number + "  |\n" +
+              "|   " + ascii + " |\n");
+    }
+    else {
+      if (this.value == 10) {
+        return ("|" + ascii + "    |\n" +
+              "| " + number + "  |\n" +
+              "|    " + ascii + "|\n");
+      }
+      return ("|" + ascii + "    |\n" +
+              "|  " + number + "  |\n" +
+              "|    " + ascii + "|\n");
+    }
   }
 
   //Main
@@ -87,16 +101,14 @@ public class Card {
     System.out.println("Generates a random number from 1-10 and assigns it to a new card\n" +
                        "Then prints out the value of the card using the accessor method");
     Card card = new Card(1, "Ace", Suits.HEARTS);
-    System.out.println(card);
     System.out.println(card.prettify());
     card = new Card(10, "Ten", Suits.DIAMONDS);
-    System.out.println(card);
     System.out.println(card.prettify());
     card = new Card(11, "Jack", Suits.CLUBS);
-    System.out.println(card);
     System.out.println(card.prettify());
     card = new Card(12, "Queen", Suits.SPADES);
-    System.out.println(card);
+    System.out.println(card.prettify());
+    card = new Card(10, "Ten", Suits.HEARTS);
     System.out.println(card.prettify());
   }
 }

@@ -2,6 +2,7 @@
  * CommunityCards.java
  */
 
+package holdem;
 import java.util.*;
 
 //Simulates the 5 community cards in a game of hold'em
