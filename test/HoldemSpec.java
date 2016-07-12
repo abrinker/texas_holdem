@@ -3,14 +3,17 @@
  */
 
 import java.util.*;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import holdem.*;
 
 public class HoldemSpec {
 
-  @Test
   public void HandSpec() {
     Card card = new Card(2, "Two", Suits.DIAMONDS);
-    assertEquals(2, card.get_value());
+  }
+
+  public static void main(String args[]) {
+    System.out.println("Running All Tests");
+    HoldemSpec test = new HoldemSpec();
+    test.HandSpec();
   }
 }

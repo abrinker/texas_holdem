@@ -2,6 +2,7 @@
  * AutoHoldem.java
  */
 
+import holdem.*;
 import java.util.*;
 
 //Simulates one automated game of Texas holdem
@@ -79,12 +80,11 @@ public class AutoHoldem {
   //Main
   public static void main(String args[]) {
     System.out.println("Plays one 'round' of holdem for test purposes");
-    AutoHoldem game = new AutoHoldem(2);
+    AutoHoldem game = new AutoHoldem(8);
     game.deal();
     game.flop();
     game.turn_river();
     game.turn_river();
-    System.out.println(game);
     System.out.println(game.prettify());
     game.fold(1);
   }
