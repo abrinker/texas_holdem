@@ -2,7 +2,7 @@
  * AutoHoldem.java
  */
 
-package holdem;
+import holdem.*;
 import java.util.*;
 
 //Simulates one automated game of Texas holdem
