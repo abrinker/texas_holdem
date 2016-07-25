@@ -5,8 +5,8 @@
 package holdem;
 
 public enum Suits {
-  SPADES,
-  DIAMONDS,
-  CLUBS,
-  HEARTS;
+    SPADES,
+    DIAMONDS,
+    CLUBS,
+    HEARTS;
 }

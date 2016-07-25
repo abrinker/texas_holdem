@@ -9,8 +9,7 @@ import java.util.*;
 //and also determines the winner.
 public class Score {
 
-
-  public static void main(String args[]) {
-    Score score = new Score();
-  }
+    public static void main(String args[]) {
+        Score score = new Score();
+    }
 }
