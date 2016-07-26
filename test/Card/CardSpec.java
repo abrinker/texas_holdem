@@ -7,12 +7,9 @@ package holdemSpec;
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import holdem.Card;
+import holdem.CardSpec;
 
 public class CardSpec {
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_RED = "\u001B[31m";
 
     @Test
     public void testValue(ArrayList<String> failures) {
@@ -25,9 +22,9 @@ public class CardSpec {
         } catch (Exception e) {
             System.out.printf(ANSI_RED + 'F' + ANSI_RESET);
             failures.add(
-                            "it creates a card with the correct suit " +
-                            " value, and name"
-                           );
+                         "it creates a card with the correct suit " +
+                         " value, and name"
+                        );
         }
     }
 
