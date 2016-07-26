@@ -8,6 +8,10 @@ import static org.junit.Assert.*;
 import holdemSpec.*;
 
 public class HoldemSpec {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_RED = "\u001B[31m";
+
     private ArrayList<String> failed_tests;
 
     public HoldemSpec() {
@@ -18,21 +22,27 @@ public class HoldemSpec {
         return this.failed_tests.size();
     }
 
-    public String print_fails() {
+    public void print_fails() {
         for (String failure : this.failed_tests) {
             System.out.println(ANSI_RED + failure + ANSI_RESET);
         }
     }
 
     public void run_tests() {
-        return; //TODO make it run all tests
+        CardSpec card = new CardSpec();
+        HandSpec hand = new HandSpec();
+
+        //Run tests
+        card.run_tests(this.failed_tests);
+        hand.run_tests(this.failed_tests);
     }
 
     public static void main(String args[]) {
         System.out.println("Running All Tests");
         HoldemSpec test = new HoldemSpec();
+        test.run_tests();
         if (test.num_failed() == 0) {
-            System.out.println("All Tests Pass!");
+            System.out.println("\nAll Tests Pass!");
         } else {
             System.out.println("Failing Tests:");
             test.print_fails();

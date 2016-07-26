@@ -7,12 +7,15 @@ package holdemSpec;
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import holdem.CardSpec;
+import holdem.*;
 
 public class CardSpec {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_RED = "\u001B[31m";
 
     @Test
-    public void testValue(ArrayList<String> failures) {
+    public void test_value(ArrayList<String> failures) {
         Card card = new Card(2, "Two", Suits.DIAMONDS);
         try {
             assertEquals(2, card.get_value());
@@ -26,6 +29,10 @@ public class CardSpec {
                          " value, and name"
                         );
         }
+    }
+
+    public void run_tests(ArrayList<String> failures) {
+        this.test_value(failures);
     }
 
     public static void main(String args[]) {
