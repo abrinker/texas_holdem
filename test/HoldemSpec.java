@@ -31,10 +31,12 @@ public class HoldemSpec {
     public void run_tests() {
         CardSpec card = new CardSpec();
         HandSpec hand = new HandSpec();
+        CommunityCardsSpec community = new CommunityCardsSpec();
 
         //Run tests
         card.run_tests(this.failed_tests);
         hand.run_tests(this.failed_tests);
+        community.run_tests(this.failed_tests);
     }
 
     public static void main(String args[]) {
