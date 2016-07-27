@@ -6,12 +6,14 @@ package holdem;
 import java.util.*;
 
 //Simulates a hand of two cards in a game of Texas Hold'em
-public class Hand {
+public class Hand implements Comparator<Hand> {
     private ArrayList<Card> hand;
+    private Score score;
 
     //Constructor
     public Hand() {
         this.hand = new ArrayList<Card>();
+        this.score = new Score();
     }
 
     //Adds a card to the hand
@@ -39,6 +41,11 @@ public class Hand {
     //Clears the hand of cards.
     public void clear() {
         this.hand.clear();
+    }
+
+    //Returns the score of the current hand
+    public int get_score() {
+        return this.score.evaluate();
     }
 
     public String toString() {
@@ -69,6 +76,11 @@ public class Hand {
             temp += "\n";
         }
         return temp;
+    }
+
+    //Compares two hands
+    public int compare(Hand a, Hand b) {
+        return compare(a.get_score(), b.get_score());
     }
 
     public static void main(String args[]) {

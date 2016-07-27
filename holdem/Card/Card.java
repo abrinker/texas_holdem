@@ -6,7 +6,7 @@ package holdem;
 import java.util.*;
 
 //Simulates a playing card from a deck
-public class Card {
+public class Card implements Comparator<Card> {
     private int value;
     private String name;
     private Suits suit;
@@ -94,6 +94,17 @@ public class Card {
                   "|  " + number + "  |\n" +
                   "|    " + ascii + "|\n");
       }
+    }
+
+    //for comparing high-cards in holdem
+    public int compare(Card card_a, Card card_b) {
+        int a = card_a.get_value();
+        int b = card_b.get_value();
+        if (a == b) { return 0; }
+        else if (a == 1) { return 1; }
+        else if (b == 1) { return -1; }
+        else if (a > b) { return 1; }
+        else { return -1; }
     }
 
     //Main
