@@ -31,11 +31,13 @@ public class HoldemSpec {
     public void run_tests() {
         CardSpec card = new CardSpec();
         HandSpec hand = new HandSpec();
+        DeckSpec deck = new DeckSpec();
         CommunityCardsSpec community = new CommunityCardsSpec();
 
         //Run tests
         card.run_tests(this.failed_tests);
         hand.run_tests(this.failed_tests);
+        deck.run_tests(this.failed_tests);
         community.run_tests(this.failed_tests);
     }
 
@@ -46,7 +48,7 @@ public class HoldemSpec {
         if (test.num_failed() == 0) {
             System.out.println("\nAll Tests Pass!");
         } else {
-            System.out.println("Failing Tests:");
+            System.out.println("\nFailing Tests:");
             test.print_fails();
         }
     }
