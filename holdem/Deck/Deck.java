@@ -73,6 +73,21 @@ public class Deck {
         this.discard.clear();
     }
 
+    //Provides the caller with the discarded cards
+    public ArrayList<Card> get_discard() {
+        return this.discard;
+    }
+
+    //Returns true if the input card is in the deck
+    public boolean contains(Card card) {
+        for (Card c : this.cards) {
+            if(card.get_value() == c.get_value() && card.get_suit() == c.get_suit()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //toString
     public String toString() {
         String temp = "Deck: ";
